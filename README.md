@@ -32,4 +32,4 @@ docker run -d --link guacd:guacd --link db:db -p 8080:8080 mattgruter/guacamole-
 ```
 
 ## Useful Links
-- 
+- [http://pyrasis.com/docker.html](http://pyrasis.com/docker.html)
