@@ -34,14 +34,12 @@ wordpress:
     volumes:
       - ~/workspace/wordpress/webroot:/var/www/html
 wordpress_db: 
-
   image: mariadb
   environment:
     MYSQL_ROOT_PASSWORD: examplepass
   volumes:
       - ~/workspace/wordpress/dbroot:/var/lib/mysql
 phpmyadmin: 
-
   image: corbinu/docker-phpmyadmin
   links:
     - wordpress_db:mysql
@@ -52,7 +50,13 @@ phpmyadmin:
     MYSQL_ROOT_PASSWORD: examplepass
 ```
 
-
+## Ghost
+```
+docker pull ghost
+docker run  -d --name ghost -p 8084:2368 -v /home/zihado/workspace/ghost:/var/lib/ghost ghost
+config.js 수정 필요 
+url: 'http://zihado.com'
+```
 
 ## Guacmole
 ```
