@@ -18,6 +18,37 @@ rmi 	// 이미지 삭제하기
 
 ```
 
+## Wordpress / MariaDB / Phpmyadmin
+```
+wordpress:
+  image: wordpress
+  links:
+    - wordpress_db:mysql
+  ports:
+    - 8080:80
+    volumes:
+      - ~/workspace/wordpress/webroot:/var/www/html
+wordpress_db: 
+
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: examplepass
+  volumes:
+      - ~/workspace/wordpress/dbroot:/var/lib/mysql
+phpmyadmin: 
+
+  image: corbinu/docker-phpmyadmin
+  links:
+    - wordpress_db:mysql
+  ports:
+    - 8181:80
+  environment:
+    MYSQL_USERNAME: root
+    MYSQL_ROOT_PASSWORD: examplepass
+```
+
+
+
 ## Guacmole
 ```
 docker pull mattgruter/guacamole-guacd
