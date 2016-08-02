@@ -58,6 +58,21 @@ config.js 수정 필요
 url: 'http://zihado.com'
 ```
 
+## Redmine
+```
+docker run --name=postgresql-redmine -d \
+  --env='DB_NAME=redmine_production' \
+  --env='DB_USER=redmine' --env='DB_PASS=password' \
+  --volume=/home/zihado/workspace/redmine/postgresql:/var/lib/postgresql \
+  sameersbn/postgresql:9.4-24
+
+  docker run --name=redmine -d \
+  --link=postgresql-redmine:postgresql --publish=10083:80 \
+  --env='REDMINE_PORT=10083' \
+  --volume=/home/zihado/workspace/redmine/redmine:/home/redmine/data \
+  sameersbn/redmine
+```
+
 ## Guacmole
 ```
 docker pull mattgruter/guacamole-guacd
