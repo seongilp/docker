@@ -20,6 +20,11 @@ rmi 	// 이미지 삭제하기
 
 ## Wordpress / MariaDB / Phpmyadmin
 ```
+docker-compose up -d
+```
+
+### docker-compose.yml
+```
 wordpress:
   image: wordpress
   links:
