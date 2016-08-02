@@ -88,3 +88,8 @@ docker run -d --link guacd:guacd --link db:db -p 8080:8080 mattgruter/guacamole-
 
 ## Useful Links
 - [http://pyrasis.com/docker.html](http://pyrasis.com/docker.html)
+- [http://mycodingblog.com/ghost-docker](http://mycodingblog.com/ghost-docker)
+- [https://www.liamdawson.me/blog/setting-up-ghost-nginx-with-docker](https://www.liamdawson.me/blog/setting-up-ghost-nginx-with-docker)
+- [https://ohmybrew.com/cdn-cgi/trace](https://ohmybrew.com/cdn-cgi/trace)
+
+  
